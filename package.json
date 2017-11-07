@@ -11,7 +11,8 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test istanbul cover _mocha -- -u exports -R spec test/**/*.spec.js"
+    "mocha": "NODE_ENV=test istanbul cover _mocha -- -u exports -R spec test/**/*.spec.js",
+    "test": "eslint . && npm run --silent mocha"
   },
   "dependencies": {
     "cartesian-product": "^2.1.2",
@@ -20,6 +21,13 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^3.4.0",
+    "eslint-config-semistandard": "^11.0.0",
+    "eslint-config-standard": "^10.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1"
   }
