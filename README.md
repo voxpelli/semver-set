@@ -1,6 +1,14 @@
-# semver-set
+# @voxpelli/semver-set
 
 Set operations for semver.
+
+This is a fork of the original [semver-set](https://github.com/izaakschroeder/semver-set), triggered by the lack of bug fixes in that project.
+
+## Install
+
+```bash
+npm install -g @voxpelli/semver-set
+```
 
 ## Usage
 
