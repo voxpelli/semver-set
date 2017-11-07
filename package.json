@@ -1,8 +1,11 @@
 {
-  "name": "semver-set",
+  "name": "@voxpelli/semver-set",
   "version": "0.1.1",
   "description": "Set operations for semver ranges.",
   "author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
+  "contributors": [
+    "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "test": "node tests/intersect-test.js"
