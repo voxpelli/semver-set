@@ -33,5 +33,9 @@ describe('intersect', () => {
 
     should.not.exist(intersect('^0.2.4', '^0.3.5'));
     intersect('>=0.2.0 <0.5.3', '^0.4.8').should.equal('^0.4.8');
+
+    intersect('>= 4.x <= 10.x', '>=6.0.0').should.equal('>=6.0.0 <11.0.0');
+    intersect('>= 4.x <= 10.2.4-rc1', '>=6.0.0').should.equal('>=6.0.0 <=10.2.4-rc1');
+    intersect('>= 4.x <= 10.2.4-rc1', '>=6.0.0-alpha1 <=10.2.4-rc2').should.equal('>=6.0.0-alpha1 <=10.2.4-rc1');
   });
 });
