@@ -1,4 +1,4 @@
 {
-  "extends": "eslint-config-semistandard",
+  "extends": "@voxpelli",
   "root": true
 }
