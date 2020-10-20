@@ -4,9 +4,9 @@ const chai = require('chai');
 
 const should = chai.should();
 
-describe('intersect', () => {
-  const intersect = require('../lib/intersect');
+const intersect = require('../lib/intersect');
 
+describe('intersect', () => {
   it('basic usage', () => {
     intersect('^1.1 || ^2.2 || >=5', '^2.2.0-alpha1').should.equal('^2.2.0');
 
