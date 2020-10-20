@@ -2,6 +2,7 @@
 
 * **BREAKING:** Require at least Node 12.x
 * **BREAKING:** Now returns `false` on no intersection rather than `null`
+* **Improvements**: Expose TypeScript types
 * **Improvements**: Fewer dependencies
 * **Refactor:** Modernize code base
 * **Refactor:** Validate types

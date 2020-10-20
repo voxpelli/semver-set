@@ -11,8 +11,20 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "mocha": "NODE_ENV=test nyc --reporter=lcov --reporter text mocha test/**/*.spec.js",
-    "test": "eslint . && npm run --silent mocha"
+    "build:0": "run-s clean",
+    "build:1-declaration": "tsc -p declaration.tsconfig.json",
+    "build": "run-s build:*",
+    "check:dependency-check": "dependency-check 'lib/*.js' 'test/**/*.js' --no-dev -i @types/*",
+    "check:installed-check": "installed-check -i eslint",
+    "check:lint": "eslint .",
+    "check:tsc": "tsc",
+    "check": "run-s clean && run-p check:*",
+    "clean:declarations": "rm -rf $(find . -maxdepth 2 -type f -name '*.d.ts' ! -name 'advanced-types.d.ts')",
+    "clean": "run-p clean:*",
+    "prepublishOnly": "run-s build",
+    "test:mocha": "c8 --reporter=lcov --reporter text mocha 'test/**/*.spec.js'",
+    "test-ci": "run-s test:*",
+    "test": "run-s clean check test:*"
   },
   "dependencies": {
     "semver": "^5.4.1"
@@ -23,8 +35,10 @@
     "@types/node": "^10.0.0",
     "@types/semver": "^5.5.0",
     "@voxpelli/eslint-config": "6.0.0",
+    "c8": "^7.3.4",
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
+    "dependency-check": "^4.1.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-es": "^3.0.0",
@@ -36,8 +50,9 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-unicorn": "^19.0.1",
+    "installed-check": "^3.0.0",
     "mocha": "^8.2.0",
-    "nyc": "^12.0.2",
+    "npm-run-all": "^4.1.5",
     "typescript": "^4.0.3"
   }
 }

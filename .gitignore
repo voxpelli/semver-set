@@ -1,7 +1,15 @@
-node_modules
-build
-*.log
-coverage
-yarn.lock
-package-lock.json
-.nyc_output
+# Basic ones
+/coverage
+/docs
+/node_modules
+/.env
+/.nyc_output
+
+# We're a library, so please, no lock files
+/package-lock.json
+/yarn.lock
+
+# Generated types
+*.d.ts
+
+# Library specific ones

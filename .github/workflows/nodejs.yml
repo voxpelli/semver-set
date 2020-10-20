@@ -5,13 +5,13 @@ on:
   - pull_request
 
 jobs:
-  lint:
-    name: Static code analysis / Linting
+  test:
+    name: Node ${{ matrix.node_version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node_version: [12, 14]
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -19,9 +19,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node_version }}
-    - name: npm install
-      run: npm install
-    - name: build
-      run: npm run build --if-present
-    - name: test
-      run: npm run test
+    - run: npm install
+    - run: npm run test-ci
