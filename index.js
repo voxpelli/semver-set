@@ -2,7 +2,11 @@
 
 'use strict';
 
-const semver = require('semver');
+const semverCompare = require('semver/functions/compare');
+const Range = require('semver/classes/range');
+// @ts-ignore */
+const ANY = require('semver/classes/comparator').ANY;
+
 const product = require('./lib/product');
 
 /** @typedef {import('./lib/advanced-types').Comparator} Comparator */
@@ -62,7 +66,7 @@ const icmp = (a, b) => {
  */
 const rcmp = (a, b) => {
   return icmp(a.semver, b.semver) ||
-    (isComparator(a) && isComparator(b) && semver.compare(a.semver, b.semver)) ||
+    (isComparator(a) && isComparator(b) && semverCompare(a.semver, b.semver)) ||
     cmp(a.operator, b.operator);
 };
 
@@ -99,11 +103,11 @@ const combine = ([lo, hi], a) => {
   if (!isLo(lo)) throw new Error('lo entry must be a lower bound');
   if (!isHi(hi)) throw new Error('hi entry must be an upper bound');
 
-  if (isHi(a)) {
+  if (isHi(a) && a.semver !== ANY) {
     hi = min(a, hi);
   }
 
-  if (isLo(a)) {
+  if (isLo(a) && a.semver !== ANY) {
     lo = max(a, lo);
   }
 
@@ -120,12 +124,13 @@ const intersect = (...ranges) => {
   // intersect them with each other, and take the disjunction of the result
   // naturally any empty results can simply be omitted.
 
-  /** @type {import('semver').Range["set"][]} */
+  /** @type {(readonly Comparator[])[][]} */
   const rangeSets = [];
 
   for (const range of ranges) {
-    const rangeInstance = new semver.Range(range);
-    rangeSets.push(rangeInstance.set);
+    const rangeInstance = new Range(range);
+    const foo = [...rangeInstance.set];
+    rangeSets.push(foo);
   }
 
   /** @type {ComparatorSet[]} */
@@ -155,10 +160,10 @@ const intersect = (...ranges) => {
 
   for (const [lo, hi] of lohiSets) {
     if (lo.operator === '>=' && hi.operator === '<' && isComparator(lo) && isComparator(hi)) {
-      if (lo.semver.major + 1 === hi.semver.major && /\.0\.0$/.test(hi.semver.raw)) {
+      if (lo.semver.major + 1 === hi.semver.major && /\.0\.0(-0)?$/.test(hi.semver.raw)) {
         finalResult.push('^' + lo.semver.raw);
         break;
-      } else if (lo.semver.major === hi.semver.major && /\.0$/.test(hi.semver.raw)) {
+      } else if (lo.semver.major === hi.semver.major && /\.0(-0)?$/.test(hi.semver.raw)) {
         // Anything in the 0.x.x line behaves like ~ even for the ^ operator.
         const operator = (lo.semver.major === 0 ? '^' : '~');
         finalResult.push(operator + lo.semver.raw);

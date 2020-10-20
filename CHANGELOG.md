@@ -2,10 +2,11 @@
 
 * **BREAKING:** Require at least Node 12.x
 * **BREAKING:** Now returns `false` on no intersection rather than `null`
+* **SEMI-BREAKING**: Updated to latest `semver`, can change some output
 * **Improvements**: Expose TypeScript types
-* **Improvements**: Fewer dependencies
-* **Refactor:** Modernize code base
-* **Refactor:** Validate types
+* **Improvements**: Replaced two unmaintained dependencies with in project code
+* **Refactor:** Modernize code base, target Node 12
+* **Refactor:** Add and validate JSDoc types
 
 ## 1.0.0 (2017-11-07)
 
