@@ -6,6 +6,11 @@
   "contributors": [
     "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)"
   ],
+  "homepage": "https://github.com/voxpelli/semver-set",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voxpelli/semver-set.git"
+  },
   "main": "lib/index.js",
   "engines": {
     "node": ">=12.0.0"
