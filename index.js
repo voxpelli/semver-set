@@ -1,16 +1,15 @@
 /// <reference types="node" />
-/// <reference types="./advanced-types" />
 
 'use strict';
 
 const semver = require('semver');
-const product = require('./product');
+const product = require('./lib/product');
 
-/** @typedef {import('./advanced-types').Comparator} Comparator */
-/** @typedef {import('./advanced-types').SemVer} SemVer */
+/** @typedef {import('./lib/advanced-types').Comparator} Comparator */
+/** @typedef {import('./lib/advanced-types').SemVer} SemVer */
 /** @typedef {[Comparator, Comparator]} ComparatorSet */
 
-/** @type {import('./advanced-types').isComparator} */
+/** @type {import('./lib/advanced-types').isComparator} */
 const isComparator = (value) => typeof value.test === 'function';
 
 /** @type {Comparator} */
@@ -183,4 +182,4 @@ const intersect = (...ranges) => {
   return finalResult.join(' || ');
 };
 
-module.exports = intersect;
+module.exports = { intersect };

@@ -11,5 +11,6 @@
 
 # Generated types
 *.d.ts
+!/lib/advanced-types.d.ts
 
 # Library specific ones

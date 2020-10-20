@@ -1,7 +1,10 @@
 {
+  "files": [
+    "index.js",
+  ],
   "include": [
     "lib/**/*.js",
-    "test/**/*.js"
+    "test/**/*.js",
   ],
   "compilerOptions": {
     /* Basic Options */

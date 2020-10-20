@@ -8,7 +8,7 @@ const chai = require('chai');
 
 const should = chai.should();
 
-const intersect = require('../lib/intersect');
+const { intersect } = require('..');
 
 /**
  * @template T
