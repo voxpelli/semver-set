@@ -1,3 +1,8 @@
+## 2.0.0 (2020-10-20)
+
+* **BREAKING:** Require at least Node 10.x
+* **Refactor:** Modernize code base
+
 ## 1.0.0 (2017-11-07)
 
 * **Bug fix:** `intersect('>=1.0.0 <7.0.0', '>2.0.0 <=8.2.0')` previously wrongly added an `&&` between upper and lower resolved version range, now returns `>2.0.0 <7.0.0`
