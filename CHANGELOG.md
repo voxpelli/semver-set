@@ -1,6 +1,6 @@
 ## 2.0.0 (2020-10-20)
 
-* **BREAKING:** Require at least Node 10.x
+* **BREAKING:** Require at least Node 12.x
 * **BREAKING:** Now returns `false` on no intersection rather than `null`
 * **Improvements**: Fewer dependencies
 * **Refactor:** Modernize code base
