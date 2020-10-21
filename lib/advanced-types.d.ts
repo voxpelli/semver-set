@@ -9,4 +9,6 @@ declare interface SimpleComparator {
 
 export type SemVer = BaseSemVer|number;
 export type Comparator = SimpleComparator|SemVerComparator;
+export type ComparatorSet = [Comparator,Comparator];
+
 export type isComparator = (value: SimpleComparator|SemVerComparator) => value is SemVerComparator;

@@ -9,16 +9,12 @@ const ANY = require('semver/classes/comparator').ANY;
 
 const product = require('./lib/product');
 
-/** @typedef {import('./lib/advanced-types').Comparator} Comparator */
-/** @typedef {import('./lib/advanced-types').SemVer} SemVer */
-/** @typedef {[Comparator, Comparator]} ComparatorSet */
-
 /** @type {import('./lib/advanced-types').isComparator} */
 const isComparator = (value) => typeof value.test === 'function';
 
-/** @type {Comparator} */
+/** @type {import('./lib/advanced-types').Comparator} */
 const lowest = { semver: -Infinity, operator: '>' };
-/** @type {Comparator} */
+/** @type {import('./lib/advanced-types').Comparator} */
 const highest = { semver: Infinity, operator: '<' };
 
 /**
@@ -41,8 +37,8 @@ const cmp = (a, b) => {
 };
 
 /**
- * @param {SemVer} a
- * @param {SemVer} b
+ * @param {import('./lib/advanced-types').SemVer} a
+ * @param {import('./lib/advanced-types').SemVer} b
  * @returns {1|0|-1}
  */
 const icmp = (a, b) => {
@@ -60,8 +56,8 @@ const icmp = (a, b) => {
 };
 
 /**
- * @param {Comparator} a
- * @param {Comparator} b
+ * @param {import('./lib/advanced-types').Comparator} a
+ * @param {import('./lib/advanced-types').Comparator} b
  * @returns {1|0|-1}
  */
 const rcmp = (a, b) => {
@@ -71,33 +67,33 @@ const rcmp = (a, b) => {
 };
 
 /**
- * @param {Comparator} a
- * @param {Comparator} b
- * @returns {Comparator}
+ * @param {import('./lib/advanced-types').Comparator} a
+ * @param {import('./lib/advanced-types').Comparator} b
+ * @returns {import('./lib/advanced-types').Comparator}
  */
 const min = (a, b) => rcmp(a, b) < 0 ? a : b;
 /**
- * @param {Comparator} a
- * @param {Comparator} b
- * @returns {Comparator}
+ * @param {import('./lib/advanced-types').Comparator} a
+ * @param {import('./lib/advanced-types').Comparator} b
+ * @returns {import('./lib/advanced-types').Comparator}
  */
 const max = (a, b) => rcmp(a, b) > 0 ? a : b;
 
 /**
- * @param {Comparator} entry
+ * @param {import('./lib/advanced-types').Comparator} entry
  * @returns {boolean}
  */
 const isHi = (entry) => /^<?=?$/.test(entry.operator);
 /**
- * @param {Comparator} entry
+ * @param {import('./lib/advanced-types').Comparator} entry
  * @returns {boolean}
  */
 const isLo = (entry) => /^>?=?$/.test(entry.operator);
 
 /**
- * @param {ComparatorSet} set
- * @param {Comparator} a
- * @returns {ComparatorSet}
+ * @param {import('./lib/advanced-types').ComparatorSet} set
+ * @param {import('./lib/advanced-types').Comparator} a
+ * @returns {import('./lib/advanced-types').ComparatorSet}
  */
 const combine = ([lo, hi], a) => {
   if (!isLo(lo)) throw new Error('lo entry must be a lower bound');
@@ -124,7 +120,7 @@ const intersect = (...ranges) => {
   // intersect them with each other, and take the disjunction of the result
   // naturally any empty results can simply be omitted.
 
-  /** @type {(readonly Comparator[])[][]} */
+  /** @type {(readonly import('./lib/advanced-types').Comparator[])[][]} */
   const rangeSets = [];
 
   for (const range of ranges) {
@@ -133,11 +129,11 @@ const intersect = (...ranges) => {
     rangeSets.push(foo);
   }
 
-  /** @type {ComparatorSet[]} */
+  /** @type {import('./lib/advanced-types').ComparatorSet[]} */
   const lohiSets = [];
 
   for (const values of product(rangeSets)) {
-    /** @type {ComparatorSet} */
+    /** @type {import('./lib/advanced-types').ComparatorSet} */
     let set = [lowest, highest];
 
     for (const a of values.flat()) {
