@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Comparator as SemVerComparator,  SemVer as BaseSemVer } from 'semver';
 
 declare interface SimpleComparator {

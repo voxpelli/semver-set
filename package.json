@@ -18,6 +18,7 @@
   "scripts": {
     "build:0": "run-s clean",
     "build:1-declaration": "tsc -p declaration.tsconfig.json",
+    "build:2-add-ignores": "ts-ignore-import '**/*.d.ts'",
     "build": "run-s build:*",
     "check:dependency-check": "dependency-check *.js 'lib/*.js' 'test/**/*.js' --no-dev -i @types/*",
     "check:installed-check": "installed-check -i eslint",
@@ -35,6 +36,7 @@
     "semver": "^7.3.2"
   },
   "devDependencies": {
+    "@hdsydsvenskan/ts-ignore-import": "^2.0.0",
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.0.3",
     "@types/node": "^10.0.0",
