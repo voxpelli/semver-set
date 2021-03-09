@@ -43,14 +43,14 @@
   },
   "devDependencies": {
     "@hdsydsvenskan/ts-ignore-import": "^2.0.0",
-    "@types/chai": "^4.2.14",
-    "@types/mocha": "^8.0.3",
-    "@types/node": "^10.0.0",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^12.20.5",
     "@types/semver": "^7.3.4",
     "@voxpelli/eslint-config": "^11.0.1",
     "@voxpelli/eslint-config-jsdoc-ts": "^0.3.1",
-    "c8": "^7.3.4",
-    "chai": "^4.1.2",
+    "c8": "^7.6.0",
+    "chai": "^4.3.3",
     "coveralls": "^3.0.0",
     "dependency-check": "^4.1.0",
     "eslint": "^7.21.0",
@@ -63,9 +63,9 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-unicorn": "^28.0.2",
-    "installed-check": "^3.0.0",
-    "mocha": "^8.2.0",
+    "installed-check": "^4.0.0",
+    "mocha": "^8.3.1",
     "npm-run-all": "^4.1.5",
-    "typescript": "^4.0.3"
+    "typescript": "^4.2.3"
   }
 }
