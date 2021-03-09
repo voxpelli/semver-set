@@ -13,9 +13,9 @@ const product = require('./lib/product');
 const isComparator = (value) => typeof value.test === 'function';
 
 /** @type {import('./lib/advanced-types').Comparator} */
-const lowest = { semver: -Infinity, operator: '>' };
+const lowest = { semver: Number.NEGATIVE_INFINITY, operator: '>' };
 /** @type {import('./lib/advanced-types').Comparator} */
-const highest = { semver: Infinity, operator: '<' };
+const highest = { semver: Number.POSITIVE_INFINITY, operator: '<' };
 
 /**
  * @param {string} a
@@ -42,13 +42,13 @@ const cmp = (a, b) => {
  * @returns {1|0|-1}
  */
 const icmp = (a, b) => {
-  if (a === Infinity) {
+  if (a === Number.POSITIVE_INFINITY) {
     return 1;
-  } else if (b === Infinity) {
+  } else if (b === Number.POSITIVE_INFINITY) {
     return -1;
-  } else if (a === -Infinity) {
+  } else if (a === Number.NEGATIVE_INFINITY) {
     return -1;
-  } else if (b === -Infinity) {
+  } else if (b === Number.NEGATIVE_INFINITY) {
     return 1;
   } else {
     return 0;
