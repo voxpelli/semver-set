@@ -1,3 +1,11 @@
+## 2.0.2 (YYYY-MM-DD)
+
+* **Improvements**: Generate declaration map for TypeScript types
+
+## 2.0.1 (2020-10-23)
+
+* **Fix**: Fixed GitHub package publishing
+
 ## 2.0.0 (2020-10-20)
 
 * **BREAKING:** Require at least Node 12.x
