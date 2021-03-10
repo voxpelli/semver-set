@@ -1,11 +1,9 @@
 {
   "name": "@voxpelli/semver-set",
   "version": "2.0.1",
-  "description": "Set operations for semver ranges.",
-  "author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
-  "contributors": [
-    "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)"
-  ],
+  "description": "Finds intersections between semantic version ranges.",
+  "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
+  "license": "MIT",
   "homepage": "https://github.com/voxpelli/semver-set",
   "repository": {
     "type": "git",

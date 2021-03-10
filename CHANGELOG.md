@@ -1,5 +1,7 @@
-## 2.0.2 (YYYY-MM-DD)
+## 3.0.0-0 (2020-03-10)
 
+* **REWRITE**: Completely rewritten from scratch to fix license, now licensed as MIT
+* **Bug fix:** `^10.17.0 || >=12.0.0` and `>=8.0.0` now properly calculates
 * **Improvements**: Generate declaration map for TypeScript types
 
 ## 2.0.1 (2020-10-23)

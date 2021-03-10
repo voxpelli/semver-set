@@ -9,7 +9,10 @@ const chai = require('chai');
 
 const should = chai.should();
 
-const { intersect } = require('..');
+const {
+  intersect,
+  semverIntersect,
+} = require('..');
 
 /**
  * @template T
@@ -56,9 +59,14 @@ describe('intersect', () => {
     doTest(['6.x', '>=6.0.0'], '^6.0.0');
     doTest(['^6.1.0', '>=4.0.0'], '^6.1.0');
     doTest(['6.0.0', '>=6.0.0'], '6.0.0');
+    doTest(['6.0.0 || 6.0.1', '>=6.0.0'], '6.0.0 || 6.0.1');
+
+    doTest(['>6.0.0', '>=6.0.0'], '>6.0.0');
+    doTest(['<6.0.0', '<=6.0.0'], '<6.0.0');
 
     doTest(['^6.1.0', '*'], '^6.1.0');
     doTest(['*', '>=4.0.0'], '>=4.0.0');
+    doTest(['*', '*'], '*');
 
     doTest(['>=1.0.0 <7.0.0', '>2.0.0 <=8.2.0'], '>2.0.0 <7.0.0');
     doTest(['1.0.0 - 1.9.1', '1.2.0 - 2.5.0'], '>=1.2.0 <=1.9.1');
@@ -68,11 +76,28 @@ describe('intersect', () => {
     doTest(['>= 4.x <= 10.x', '>=6.0.0'], '>=6.0.0 <11.0.0-0');
     doTest(['>= 4.x <= 10.2.4-rc1', '>=6.0.0'], '>=6.0.0 <=10.2.4-rc1');
     doTest(['>= 4.x <= 10.2.4-rc1', '>=6.0.0-alpha1 <=10.2.4-rc2'], '>=6.0.0-alpha1 <=10.2.4-rc1');
+
+    doTest(['^10.17.0 || >=12.0.0', '>=8.0.0'], '^10.17.0 || >=12.0.0');
+    doTest(['^10.17.0 || >=10.20.0', '>=8.0.0'], '>=10.17.0');
+
+    // Dedupe
+    doTest(['^10.17.0 || ^9.7.0 || >=11.0.0 || >=13.0.0 || >=10.0.0', '>=8.0.0 || >=11.5.0'], '^9.7.0 || >=10.0.0');
   });
 
   describe('should not intersect', () => {
     doNegativeTest(['~2.2.4', '~2.3.0']);
     doNegativeTest(['>=6.0.0', '<6.0.0']);
     doNegativeTest(['^0.2.4', '^0.3.5']);
+  });
+
+  describe('semverIntersect()', () => {
+    it('should return string', () => {
+      const result = semverIntersect('~2.2.4', '~2.2.5');
+      should.exist(result);
+      (result || '').should.equal('~2.2.5');
+    });
+    it('should return undefined on non-overlap', () => {
+      should.not.exist(semverIntersect('~2.2.4', '~2.3.0'));
+    });
   });
 });
