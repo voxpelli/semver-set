@@ -1,6 +1,6 @@
 {
   "name": "@voxpelli/semver-set",
-  "version": "2.0.1",
+  "version": "3.0.0-0",
   "description": "Finds intersections between semantic version ranges.",
   "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
   "license": "MIT",
