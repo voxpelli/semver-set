@@ -45,7 +45,7 @@
   "devDependencies": {
     "@hdsydsvenskan/ts-ignore-import": "^2.0.0",
     "@types/chai": "^4.2.15",
-    "@types/mocha": "^8.2.1",
+    "@types/mocha": "^8.2.2",
     "@types/node": "^12.20.7",
     "@types/semver": "^7.3.4",
     "@voxpelli/eslint-config": "^11.0.1",
