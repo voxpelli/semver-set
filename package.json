@@ -41,7 +41,7 @@
     "test": "run-s clean check test:*"
   },
   "dependencies": {
-    "semver": "^7.3.2"
+    "semver": "^7.3.5"
   },
   "devDependencies": {
     "@hdsydsvenskan/ts-ignore-import": "^2.0.0",
