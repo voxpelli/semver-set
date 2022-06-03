@@ -44,7 +44,7 @@ const formatCompactedComparator = (comparators) => {
  * @param {{ loose?: boolean }} [options]
  * @returns {string|undefined}
  */
-const semverIntersect = (rangeA, rangeB, { loose } = {}) => {
+const semverIntersect = (rangeA, rangeB, { loose = false } = {}) => {
   const a = new Range(rangeA, { loose });
   const b = new Range(rangeB, { loose });
 
