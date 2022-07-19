@@ -28,7 +28,7 @@ semverIntersect('~2.2.4', '~2.3.0');
 ```
 
 
-### intersect(...ranges)  _(deprecated)_
+### ~~intersect(...ranges)~~  _(deprecated)_
 
 The original [semver-set](https://github.com/izaakschroeder/semver-set) `intersect()` method is supported to ensure backwards compatibility
 
