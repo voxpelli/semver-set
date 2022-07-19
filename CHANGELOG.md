@@ -1,3 +1,14 @@
+## 4.0.0 (2022-07-19)
+
+* **BREAKING:** Require Node.js 14
+* **BREAKING:** This package is now pure ESM. **Please [read this](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).**
+
+## 3.0.0 (2021-05-15)
+
+* **Bug fix:** Bad metadata in package.json
+
+As well as changes in `3.0.0-0`
+
 ## 3.0.0-0 (2020-03-10)
 
 * **REWRITE**: Completely rewritten from scratch to fix license, now licensed as MIT
