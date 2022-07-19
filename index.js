@@ -1,13 +1,9 @@
-/// <reference types="node" />
-
-'use strict';
-
-const Range = require('semver/classes/range');
+import Comparator from 'semver/classes/comparator.js';
+import Range from 'semver/classes/range.js';
+import { rangeIntersection, sortRangeIntersection } from './lib/subset.js';
 
 // @ts-ignore
-const ANY = require('semver/classes/comparator').ANY;
-
-const { rangeIntersection, sortRangeIntersection } = require('./lib/subset');
+const ANY = Comparator.ANY;
 
 /**
  * @param {import('./lib/subset').CompactedComparator} comparators
@@ -44,7 +40,7 @@ const formatCompactedComparator = (comparators) => {
  * @param {{ loose?: boolean }} [options]
  * @returns {string|undefined}
  */
-const semverIntersect = (rangeA, rangeB, { loose = false } = {}) => {
+export function semverIntersect (rangeA, rangeB, { loose = false } = {}) {
   const a = new Range(rangeA, { loose });
   const b = new Range(rangeB, { loose });
 
@@ -55,14 +51,14 @@ const semverIntersect = (rangeA, rangeB, { loose = false } = {}) => {
   sortRangeIntersection(intersection);
 
   return intersection.map(comparators => formatCompactedComparator(comparators)).join(' || ');
-};
+}
 
 /**
  * @deprecated Use semverIntersect() instead
  * @param {...string} ranges
  * @returns {string|null}
  */
-const intersect = (...ranges) => {
+export function intersect (...ranges) {
   let currentIntersection = ranges.shift();
 
   for (const intersectionTarget of ranges) {
@@ -73,9 +69,4 @@ const intersect = (...ranges) => {
   // Backwards compatibility
   // eslint-disable-next-line unicorn/no-null
   return currentIntersection || null;
-};
-
-module.exports = {
-  intersect,
-  semverIntersect,
-};
+}

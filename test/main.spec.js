@@ -1,18 +1,12 @@
 /* eslint-disable mocha/no-setup-in-describe */
-/// <reference types="node" />
-/// <reference types="mocha" />
-/// <reference types="chai" />
+import chai from 'chai';
 
-'use strict';
-
-const chai = require('chai');
-
-const should = chai.should();
-
-const {
+import {
   intersect,
   semverIntersect,
-} = require('..');
+} from '../index.js';
+
+const should = chai.should();
 
 /**
  * @template T
