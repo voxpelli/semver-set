@@ -33,7 +33,7 @@
     "check:tsc": "tsc",
     "check:type-coverage": "type-coverage --detail --strict --at-least 100",
     "check": "run-s clean && run-p check:*",
-    "clean:declarations": "rm -rf $(find . -maxdepth 2 -type f -name '*.d.ts' ! -name 'advanced-types.d.ts')",
+    "clean:declarations": "rm -rf $(find . -maxdepth 2 -type f -name '*.d.ts*' ! -name 'advanced-types.d.ts')",
     "clean": "run-p clean:*",
     "prepublishOnly": "run-s build",
     "test:mocha": "c8 --reporter=lcov --reporter text mocha 'test/**/*.spec.js'",
