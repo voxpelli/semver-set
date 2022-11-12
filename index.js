@@ -9,7 +9,7 @@ const ANY = Comparator.ANY;
  * @param {import('./lib/subset.js').CompactedComparator} comparators
  * @returns {string}
  */
-export const formatCompactedComparator = (comparators) => {
+const formatCompactedComparator = (comparators) => {
   if (comparators.length === 1) {
     return comparators[0].semver === ANY ? '*' : String(comparators[0]);
   }
