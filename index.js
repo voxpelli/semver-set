@@ -6,10 +6,10 @@ import { rangeIntersection, sortRangeIntersection } from './lib/subset.js';
 const ANY = Comparator.ANY;
 
 /**
- * @param {import('./lib/subset').CompactedComparator} comparators
+ * @param {import('./lib/subset.js').CompactedComparator} comparators
  * @returns {string}
  */
-const formatCompactedComparator = (comparators) => {
+export const formatCompactedComparator = (comparators) => {
   if (comparators.length === 1) {
     return comparators[0].semver === ANY ? '*' : String(comparators[0]);
   }
