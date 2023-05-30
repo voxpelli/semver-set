@@ -9,7 +9,7 @@ Finds intersections between semantic version ranges.
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/voxpelli/eslint-config)
 [![Follow @voxpelli@mastodon.social](https://img.shields.io/mastodon/follow/109247025527949675?domain=https%3A%2F%2Fmastodon.social&style=social)](https://mastodon.social/@voxpelli)
 
-Started out as a fork of [izaakschroeder/semver-setsemver-set](https://github.com/izaakschroeder/semver-set), triggered by the lack of bug fixes in that project, but has now been rewritten from scratch to fix issue with missing license in original project.
+Started out as a fork of [izaakschroeder/semver-set](https://github.com/izaakschroeder/semver-set), triggered by the lack of bug fixes in that project, but has now been rewritten from scratch to fix issue with missing license in original project.
 
 ## Usage
 
