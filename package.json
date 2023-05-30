@@ -28,7 +28,7 @@
     "build:1-declaration": "tsc -p declaration.tsconfig.json",
     "build:2-add-ignores": "ts-ignore-import '**/*.d.ts'",
     "build": "run-s build:*",
-    "check:installed-check": "installed-check -i eslint-plugin-jsdoc",
+    "check:installed-check": "installed-check -i eslint-plugin-jsdoc -i knip",
     "check:knip": "knip",
     "check:lint": "eslint --report-unused-disable-directives .",
     "check:tsc": "tsc",
