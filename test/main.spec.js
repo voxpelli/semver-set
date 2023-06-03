@@ -1,4 +1,6 @@
+/* eslint-disable import/no-deprecated */
 /* eslint-disable mocha/no-setup-in-describe */
+
 import chai from 'chai';
 
 import {
