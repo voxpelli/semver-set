@@ -13,7 +13,7 @@
   "exports": "./index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "files": [
     "index.js",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.9",
     "@types/mocha": "^10.0.3",
-    "@types/node": "^16.18.59",
+    "@types/node": "^18.19.50",
     "@types/semver": "^7.5.4",
     "@voxpelli/eslint-config": "^21.0.0",
     "@voxpelli/tsconfig": "^14.0.0",
