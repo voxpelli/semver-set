@@ -1,4 +1,3 @@
-/* eslint-disable import/no-deprecated */
 /* eslint-disable mocha/no-setup-in-describe */
 
 import chai from 'chai';
@@ -92,6 +91,7 @@ describe('intersect', () => {
       should.exist(result);
       (result || '').should.equal('~2.2.5');
     });
+
     it('should return undefined on non-overlap', () => {
       should.not.exist(semverIntersect('~2.2.4', '~2.3.0'));
     });
