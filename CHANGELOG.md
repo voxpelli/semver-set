@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.0.1](https://github.com/voxpelli/semver-set/compare/v6.0.0...v6.0.1) (2024-09-13)
+
+
+### 🧹 Chores
+
+* fix usage of deprecated husky syntax ([806be93](https://github.com/voxpelli/semver-set/commit/806be933ad36c5390657390f2c5e7798f0fe4d68))
+
 ## [6.0.0](https://github.com/voxpelli/semver-set/compare/v5.0.2...v6.0.0) (2024-09-13)
 
 
