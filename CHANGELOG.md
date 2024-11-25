@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.0.1](https://github.com/voxpelli/semver-set/compare/v6.0.0...v6.0.1) (2024-11-25)
+
+
+### 🧹 Chores
+
+* **deps:** update dependency @voxpelli/eslint-config to v22 ([#64](https://github.com/voxpelli/semver-set/issues/64)) ([f008715](https://github.com/voxpelli/semver-set/commit/f0087155d1d05e633d76d42f256797bf7ca92168))
+* fix usage of deprecated husky syntax ([806be93](https://github.com/voxpelli/semver-set/commit/806be933ad36c5390657390f2c5e7798f0fe4d68))
+
 ## [6.0.0](https://github.com/voxpelli/semver-set/compare/v5.0.2...v6.0.0) (2024-09-13)
 
 
