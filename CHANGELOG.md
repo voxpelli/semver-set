@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.0](https://github.com/voxpelli/semver-set/compare/v6.0.2...v7.0.0) (2025-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* require node `>=20.15.0`
+
+### 🩹 Fixes
+
+* require node `>=20.15.0` ([e375650](https://github.com/voxpelli/semver-set/commit/e37565007159877fc4f51bcdb9de047ed9f288da))
+
 ## [6.0.2](https://github.com/voxpelli/semver-set/compare/v6.0.1...v6.0.2) (2025-08-16)
 
 
