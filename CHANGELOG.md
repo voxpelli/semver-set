@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.0.2](https://github.com/voxpelli/semver-set/compare/v6.0.1...v6.0.2) (2025-08-16)
+
+
+### 🧹 Chores
+
+* **deps:** update `@types/node` ([983a61b](https://github.com/voxpelli/semver-set/commit/983a61bc3c0831f87e00f584e41c4dfa1a120733))
+
 ## [6.0.1](https://github.com/voxpelli/semver-set/compare/v6.0.0...v6.0.1) (2025-08-12)
 
 
