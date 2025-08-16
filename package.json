@@ -13,7 +13,7 @@
   "exports": "./index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    "node": "^20.15.0 || >=22.2.0"
   },
   "files": [
     "index.js",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.20",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^18.19.123",
+    "@types/node": "^20.19.11",
     "@types/semver": "^7.7.0",
     "@voxpelli/eslint-config": "^23.0.0",
     "@voxpelli/tsconfig": "^16.0.0",
@@ -59,7 +59,7 @@
     "installed-check": "^9.3.0",
     "knip": "^5.62.0",
     "mocha": "^11.7.1",
-    "npm-run-all2": "^7.0.2",
+    "npm-run-all2": "^8.0.4",
     "ts-ignore-import": "^4.0.1",
     "type-coverage": "^2.29.7",
     "typescript": "~5.9.2",
