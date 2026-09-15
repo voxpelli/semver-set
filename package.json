@@ -62,7 +62,7 @@
     "npm-run-all2": "^8.0.4",
     "ts-ignore-import": "^4.0.1",
     "type-coverage": "^2.29.7",
-    "typescript": "~5.9.2",
+    "typescript": "~7.0.2",
     "validate-conventional-commit": "^1.0.4"
   }
 }
